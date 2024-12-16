@@ -1,0 +1,31 @@
+﻿@model Hotels.Models.ViewModels.LoginViewModel
+
+
+<div style="display:flex">
+    <h1>Login</h1>
+    <a asp-controller="Account" asp-action="Register" class="btn btn-primary mb-4" style="margin-left:1000px">Register</a>
+</div>
+<div style="height: 558px; width: 1400px; background-size: 100% 100%; background-image: url(https://wallpaper.dog/large/5486507.png) ">
+    <form asp-action="Login" asp-controller="Account" asp-antiforgery="true">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div>
+            @Html.HiddenFor(x => x.ReturnUrl)
+            <div style="display:flex">
+                <div>
+                    <div>@Html.LabelFor(x => x.UserName)</div>
+                    @Html.TextBoxFor(x => x.UserName)
+                    @Html.ValidationMessageFor(x => x.UserName)
+                </div>
+                <div style="margin-left:100px">
+                    <div>@Html.LabelFor(x => x.Password)</div>
+                    @Html.PasswordFor(x => x.Password)
+                    @Html.ValidationMessageFor(x => x.Password)
+                    <div>@Html.LabelFor(x => x.RememberMe)</div>
+                    @Html.CheckBoxFor(x => x.RememberMe)
+                    @Html.ValidationMessageFor(x => x.Password)
+                </div>
+            </div>
+            <input type="submit" value="Login" class="btn btn-primary" style="width:517px; margin-top:20px" />
+        </div>
+    </form>
+</div>

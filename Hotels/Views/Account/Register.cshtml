@@ -1,0 +1,43 @@
+﻿@model Hotels.Models.ViewModels.RegisterViewModel
+
+
+<h1>Register</h1>
+<div style="height: 540px; width: 1400px; background-size: 100% 100%; background-image: url(https://wallpaper.dog/large/5486507.png) ">
+    <form asp-action="Register" asp-controller="Account" asp-antiforgery="true">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div>
+            <div>
+                <div style="display:flex">
+                    <div>
+                        <div>@Html.LabelFor(x => x.Name)</div>
+                        @Html.TextBoxFor(x => x.Name)
+                        @Html.ValidationMessageFor(x => x.Name)
+                    </div>
+                </div>
+                <div>
+                    <div>@Html.LabelFor(x => x.Email)</div>
+                    @Html.TextBoxFor(x => x.Email)
+                    @Html.ValidationMessageFor(x => x.Email)
+                </div>
+                <div>
+                    <div>@Html.LabelFor(x => x.Year)</div>
+                    @Html.TextBoxFor(x => x.Year)
+                    @Html.ValidationMessageFor(x => x.Year)
+                </div>
+                <div style="display:flex">
+                    <div>
+                        <div>@Html.LabelFor(x => x.Password)</div>
+                        @Html.PasswordFor(x => x.Password)
+                        @Html.ValidationMessageFor(x => x.Password)
+                    </div>
+                    <div style="margin-left: 50px">
+                        <div>@Html.LabelFor(x => x.ConfirmPassword)</div>
+                        @Html.PasswordFor(x => x.ConfirmPassword)
+                        @Html.ValidationMessageFor(x => x.ConfirmPassword)
+                    </div>
+                </div>
+            </div>
+            <input type="submit" value="Confirm" class="btn btn-primary" style="width:466px; margin-top:20px" />
+        </div>
+    </form>
+</div>

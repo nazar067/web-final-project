@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Hotels.Models.Hotel>
+
+<h2>Hotels</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Photo</th>
+            <th>Country</th>
+            <th>Stars</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var hotel in Model)
+        {
+        <tr>
+            <td>@hotel.Title</td>
+            <td><img src="@hotel.Img" style="width: 100px; height:100px" /></td>
+            <td>@hotel.Contry</td>
+            <td>@hotel.Stars</td>
+            <td>@hotel.Price$</td>
+            <th><a href="Home/More/@hotel.Id" class="btn btn-primary">More</a></th>
+        </tr>
+        }
+    </tbody>
+</table>
+@*@foreach(var hotel in Model)
+{
+    <div class="hotels">
+        <div>@hotel.Title</div>
+        <div><img src="@hotel.Img" style="width: 100px; height:100px"/></div>
+        <div>@hotel.Contry</div>
+        <div>@hotel.Stars</div>
+        <div>@hotel.Price$</div>
+        <div><a href="~Home/More/@hotel.Id" class="btn btn-primary">More</a></div>
+    </div>
+}*@

@@ -1,0 +1,63 @@
+﻿@model Hotels.Models.Hotel
+
+<form method="post">
+    @Html.HiddenFor(x => x.Id)
+    <div style="display:flex; margin-left:200px">
+        <div>
+            <div style="display:block; text-align:center">Title</div>
+            <div style="margin:20px">@Html.TextAreaFor(x => x.Title)</div>
+        </div>
+        <div>
+            <div style="display:block; text-align:center">Photo</div>
+            <div style="margin:20px">@Html.TextAreaFor(x => x.Img)</div>
+        </div>
+        <div>
+            <div style="display:block; text-align:center">Country</div>
+            <div style="margin:20px">@Html.TextAreaFor(x => x.Contry)</div>
+        </div>
+    </div>
+    <div style="display:flex; margin-left:200px">
+        <div>
+            <div style="display:block; text-align:center">Stars</div>
+            <div style="margin:20px">@Html.TextAreaFor(x => x.Stars)</div>
+        </div>
+        <div>
+            <div style="display:block; margin-left:115px">Price</div>
+            <div style="margin:20px">@Html.TextAreaFor(x => x.Price)</div>
+        </div>
+        <div>
+            <div style="display:block; margin-left:90px">Description</div>
+            <div style="margin:20px">@Html.TextAreaFor(x => x.Description)</div>
+        </div>
+    </div>
+    <div style="display:flex; margin-left:200px">
+        <div>
+            <div style="display:block; text-align:center">Photo 1</div>
+            <div style="margin:20px">@Html.TextAreaFor(x => x.Img1)</div>
+        </div>
+        <div>
+            <div style="display:block; margin-left:115px">Photo 2</div>
+            <div style="margin:20px">@Html.TextAreaFor(x => x.Img2)</div>
+        </div>
+        <div>
+            <div style="display:block; margin-left:90px">Photo 3</div>
+            <div style="margin:20px">@Html.TextAreaFor(x => x.Img3)</div>
+        </div>
+    </div>
+    <div style="display:flex; margin-left:200px">
+        <div>
+            <div style="display:block; text-align:center">Photo 4</div>
+            <div style="margin:20px">@Html.TextAreaFor(x => x.Img4)</div>
+        </div>
+        <div>
+            <div style="display:block; margin-left:115px">Photo 5</div>
+            <div style="margin:20px">@Html.TextAreaFor(x => x.Img5)</div>
+        </div>
+        <div>
+            <div style="display:block; margin-left:90px">Photo 6</div>
+            <div style="margin:20px">@Html.TextAreaFor(x => x.Img6)</div>
+        </div>
+    </div>
+
+    <input type="submit" value="Save changes" style="margin-left:218px; width:69%; background-color:greenyellow; border-radius:10px" />
+</form>

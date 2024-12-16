@@ -1,0 +1,35 @@
+﻿@model Hotels.Models.Order
+
+<div>
+    <h3>Your info</h3>
+    <form method="post">
+        <input type="hidden" value="@ViewBag.HotelsId" name="HotelsId" />
+        <div style="display:flex; align-content:center">
+            <div style="display:block;">
+                <div class="form-group">
+                    <div>Name:</div>
+                    @Html.TextBoxFor(x => x.Name)
+                    <span style="color:red;">@Html.ValidationMessageFor(x => x.Name)</span>
+                </div>
+                <div class="form-group">
+                    <div style="margin-top:20px">Last name:</div>
+                    @Html.TextBoxFor(x => x.Lastname)
+                    <span style="color:red;">@Html.ValidationMessageFor(x => x.Lastname)</span>
+                </div>
+            </div>
+            <div style="display:block; margin-left:100px">
+                <div class="form-group">
+                    <div>Phone number:</div>
+                    @Html.TextBoxFor(x => x.Phone)
+                    <span style="color:red;">@Html.ValidationMessageFor(x => x.Phone)</span>
+                </div>
+                <div class="form-group">
+                    <div style="margin-top:20px">Email:</div>
+                    @Html.TextBoxFor(x => x.Email)
+                    <span style="color:red;">@Html.ValidationMessageFor(x => x.Email)</span>
+                </div>
+            </div>
+        </div>
+        <input type="submit" value="Buy" style="width:46.5%; background-color:lime; border-radius:5px" />
+    </form>
+</div>

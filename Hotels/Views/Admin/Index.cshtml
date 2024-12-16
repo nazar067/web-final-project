@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Hotels.Models.Hotel>
+
+<div>@Html.ActionLink("Add new hotel", "Create", "Admin", null, new { @class = "btn btn-primary", @style = "width: 100%" })</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Photo</th>
+            <th>Country</th>
+            <th>Stars</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var hotel in Model)
+        {
+            <tr>
+                <td>@hotel.Title</td>
+                <td><img src="@hotel.Img" style="width: 100px; height:100px" /></td>
+                <td>@hotel.Contry</td>
+                <td>@hotel.Stars</td>
+                <td>@hotel.Price</td>
+                <td>
+                    <a asp-controller="Admin" asp-action="Create" asp-route-bicycleId="@hotel.Id" class="btn btn-warning">Edit</a>
+                </td>
+                <td>
+                    <form method="post" action="~/Admin/Delete">
+                        <input type="hidden" value="@hotel.Id" name="hotelId" />
+                        <input type="submit" class="btn btn-danger" value="Delete" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

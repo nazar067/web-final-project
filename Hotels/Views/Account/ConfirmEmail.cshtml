@@ -1,0 +1,12 @@
+﻿@model Hotels.Models.ViewModels.ConfirmEmailViewModel
+
+<div style="height: 558px; width: 1400px; background-size: 100% 100%; background-image: url(https://wallpaper.dog/large/5486507.png) ">
+    <form asp-action="ConfirmEmail" asp-controller="Account" asp-antiforgery="true">
+        <div>
+            <div>@Html.LabelFor(x => x.Password)</div>
+            @Html.PasswordFor(x => x.Password)
+            @Html.ValidationMessageFor(x => x.Password)
+        </div>
+        <input type="submit" value="Confirm" class="btn btn-primary" style="width:517px; margin-top:20px" />
+    </form>
+</div>
