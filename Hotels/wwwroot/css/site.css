@@ -1,5 +1,4 @@
-﻿/* Основные стили */
-html {
+﻿html {
     font-size: 16px;
     scroll-behavior: smooth;
 }
@@ -13,7 +12,6 @@ body {
     line-height: 1.6;
 }
 
-/* Ссылки */
 a {
     color: #1b6ec2;
     text-decoration: none;
@@ -25,7 +23,6 @@ a {
         text-decoration: underline;
     }
 
-/* Кнопки */
 .btn-primary {
     color: #fff;
     background-color: #007bff;
@@ -40,7 +37,6 @@ a {
         background-color: #0056b3;
     }
 
-/* Отели (карточки) */
 .hotels {
     display: flex;
     flex-direction: column;
@@ -84,7 +80,19 @@ a {
         margin-top: 10px;
     }
 
-/* Футер */
+.descrip {
+    margin-left: 600px;
+    border-radius: 10px;
+    background-color: #C0C0C0;
+}
+
+.form-reg {
+    background-image: url(https://wallpaper.dog/large/5486507.png);
+    height: 540px;
+    width: 1400px;
+    background-size: 100% 100%;
+}
+
 .footer {
     position: fixed;
     bottom: 0;
@@ -96,7 +104,6 @@ a {
     font-size: 14px;
 }
 
-/* Кнопка отправки */
 .submit-button {
     width: 100%;
     background-color: #1b6ec2;
@@ -113,13 +120,11 @@ a {
         background-color: #0f4c81;
     }
 
-/* Заголовки */
 h1, h2, h3 {
     font-weight: bold;
     color: #333;
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
     .hotels {
         width: 90%;

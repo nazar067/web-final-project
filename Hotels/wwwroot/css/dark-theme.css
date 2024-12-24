@@ -1,0 +1,100 @@
+﻿html, body {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+a {
+    color: #bb86fc;
+}
+
+    a:hover {
+        color: #9a64e0;
+    }
+
+.btn-primary {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+    .btn-primary:hover {
+        background-color: #444444;
+    }
+
+.hotels {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border-color: #444444;
+}
+
+    .hotels .price {
+        color: #27ae60;
+    }
+
+.footer {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.submit-button {
+    background-color: #444444;
+    color: #ffffff;
+}
+
+    .submit-button:hover {
+        background-color: #555555;
+    }
+
+h1, h2, h3, h4, h5, h6 {
+    color: #29688f;
+}
+
+.navbar {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+    .navbar a {
+        color: #29688f;
+    }
+
+        .navbar a:hover {
+            color: #bb86fc;
+        }
+
+    .navbar .btn {
+        background-color: #333333;
+        color: #ffffff;
+    }
+
+        .navbar .btn:hover {
+            background-color: #444444;
+        }
+
+.form-reg {
+    background-image: url(https://wallpapers.com/images/hd/cool-grey-o48b24zak36yzbs4.jpg);
+    height: 540px;
+    width: 1400px;
+    background-size: 100% 100%;
+}
+
+.descrip {
+    margin-left: 600px;
+    border-radius: 10px;
+    background-color: #708090;
+}
+
+tr, th {
+    color: #29688f;
+}
+
+@media (max-width: 768px) {
+    .hotels {
+        width: 90%;
+    }
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 18px;
+    }
+}
