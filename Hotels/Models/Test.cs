@@ -149,7 +149,22 @@ namespace Hotels.Models
                         Contry = "Monaco",
                         Stars = 5,
                         Price = 7000
-}
+                    },
+                    new Hotel
+                    {
+                        Title = "The Grand Hotel, Hurghada",
+                        Description = "The Grand Hotel, Hurghada - це готель з 4 зірками на першій лінії міста Хургада. У розпорядженні гостей відкритий басейн, сад і приватний пляж. Пляж Steigenberger Al Dau Beach Серед зручностей є тераса і бар. клуб, доставка їжі та напоїв та послуга обміну валют.\n\nОсобливості: елегантні номери, ресторан Louis XV, басейн, спа-послуги, розкішний вид на море.",
+                        Img = "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581212578.jpg?k=f0d4f5676c6b695f48f06fa3da4208f9ead411dfc946a96718e371427caca293&o=&hp=1",
+                        Img1 = "https://cf.bstatic.com/xdata/images/hotel/max1024x768/463993090.jpg?k=5c78491f089cd130309d1454a22a566950d09f0366e7f44ea6c53a59407ed77d&o=&hp=1",
+                        Img2 = "https://cf.bstatic.com/xdata/images/hotel/max1024x768/463992170.jpg?k=d4c287cd9cbbaccdc6db8fc46d2315b371f7d1755af91bb9983c1b55a4d428e1&o=&hp=1",
+                        Img3 = "https://cf.bstatic.com/xdata/images/hotel/max1024x768/463995767.jpg?k=26b4891416a05564db6ebbe8ea89e75f7d64c4b4826df575d98fc2bb593207d7&o=&hp=1",
+                        Img4 = "https://cf.bstatic.com/xdata/images/hotel/max1024x768/463993364.jpg?k=0860053f3a5af89780aef93f3087ca0ba9945de3f80e0fc393a75e692638df5c&o=&hp=1",
+                        Img5 = "https://cf.bstatic.com/xdata/images/hotel/max1024x768/463993402.jpg?k=4066e3b786ecb60689b927a01a04823743b3dedb2528ce83748b27cd9585e1c1&o=&hp=1",
+                        Img6 = "https://cf.bstatic.com/xdata/images/hotel/max1024x768/463992273.jpg?k=ade8e51939bce369917a82313d32c47f99a35b387fb59622d02e2ccfaf739762&o=&hp=1",
+                        Contry = "Egypt",
+                        Stars = 4,
+                        Price = 2222
+                    }
                 );
                 context.SaveChanges();
             }
