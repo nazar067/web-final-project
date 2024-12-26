@@ -33,7 +33,6 @@ namespace Hotels.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Создаем нового пользователя
                 User user = new User
                 {
                     UserName = model.Name,
@@ -41,17 +40,26 @@ namespace Hotels.Controllers
                     Year = model.Year
                 };
 
-                // Пытаемся создать пользователя
                 var result = await userManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
                 {
-                    // Автоматический вход после регистрации
+                    // Добавляем пользователя в роль "User"
+                    var roleResult = await userManager.AddToRoleAsync(user, "Admin");
+
+                    if (!roleResult.Succeeded)
+                    {
+                        foreach (var error in roleResult.Errors)
+                        {
+                            ModelState.AddModelError("", error.Description);
+                        }
+                        return View(model);
+                    }
+
                     await signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction("Index", "Home");
                 }
 
-                // Если есть ошибки, добавляем их в ModelState
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError("", error.Description);

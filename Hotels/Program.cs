@@ -19,8 +19,10 @@ namespace Hotels
             using (var scope = host.Services.CreateScope())
             {
                 var service = scope.ServiceProvider;
-                var context = service.GetRequiredService<HotelsContext>();
-                Test.Init(context);
+                var contextHotels = service.GetRequiredService<HotelsContext>();
+                var contextRoles = service.GetRequiredService<IdentityContext>();
+                Test.InitHotels(contextHotels);
+                Test.InitRoles(contextRoles);
             }
             host.Run();
         }

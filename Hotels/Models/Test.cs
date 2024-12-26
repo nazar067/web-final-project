@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ namespace Hotels.Models
 {
     public class Test
     {
-        public static void Init(HotelsContext context)
+        public static void InitHotels(HotelsContext context)
         {
             if (!context.Hotels.Any())
             {
@@ -150,6 +151,27 @@ namespace Hotels.Models
                         Stars = 5,
                         Price = 7000
 }
+                );
+                context.SaveChanges();
+            }
+        }
+        public static void InitRoles (IdentityContext context)
+        {
+            if (!context.Roles.Any())
+            {
+                context.Roles.AddRange(
+                    new IdentityRole
+                    {
+                        Name = "Admin",
+                        NormalizedName = "Admin",
+                        ConcurrencyStamp = "admin",
+                    },
+                    new IdentityRole
+                    {
+                        Name = "User",
+                        NormalizedName = "User",
+                        ConcurrencyStamp = "user",
+                    }
                 );
                 context.SaveChanges();
             }
