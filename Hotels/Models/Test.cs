@@ -25,6 +25,8 @@ namespace Hotels.Models
                         Img6 = "https://res.klook.com/klook-hotel/image/upload/travelapi/70000000/69950000/69945200/69945111/55e9760f_z.jpg",
                         Contry = "Ukraine",
                         Stars = 5,
+                        Lat = 50.442, 
+                        Lng = 30.517,
                         Price = 2000
                     },
                     new Hotel
@@ -40,6 +42,8 @@ namespace Hotels.Models
                         Img6 = "https://travelblog.lv/wp-content/uploads/2016/11/hotel_panorama.jpg",
                         Contry = "Ukraine",
                         Stars = 5,
+                        Lat = 50.448,
+                        Lng = 30.499,
                         Price = 1800
                     },
                     new Hotel
@@ -55,6 +59,8 @@ namespace Hotels.Models
                         Img6 = "https://newimg.otpusk.com/3/800x600/00/04/32/89/4328947.webp",
                         Contry = "Egypt",
                         Stars = 5,
+                        Lat = 28.024,
+                        Lng = 34.436,
                         Price = 1000
                     },
                     new Hotel
@@ -70,6 +76,8 @@ namespace Hotels.Models
                         Img6 = "https://kompastour.com/useruploads/hotels/hotel_fdbdb288b5.jpg",
                         Contry = "Egypt",
                         Stars = 5,
+                        Lat = 27.965,
+                        Lng = 34.397,
                         Price = 1100
                     },
                     new Hotel
@@ -85,6 +93,8 @@ namespace Hotels.Models
                         Img6 = "https://res.cloudinary.com/enchanting/q_70,f_auto,c_fill,g_face/hj-web/2020/10/LAX.A.2011.117573.004.jpg",
                         Contry = "USA",
                         Stars = 5,
+                        Lat = 34.009,
+                        Lng = -118.491,
                         Price = 5000
                     },
                     new Hotel
@@ -100,6 +110,8 @@ namespace Hotels.Models
                         Img6 = "https://cf.bstatic.com/xdata/images/hotel/max1024x768/484067469.jpg?k=d1b059aab56943d91f45e47c888bea80c118799833bc2d7ad487921a7f4237e1&o=&hp=1",
                         Contry = "Ukraine",
                         Stars = 5,
+                        Lat = 50.445,
+                        Lng = 30.504,
                         Price = 2200
                     },
 
@@ -116,6 +128,8 @@ namespace Hotels.Models
                         Img6 = "https://cf.bstatic.com/xdata/images/hotel/max1024x768/566883953.jpg?k=feccbdf90fdf25282b10700161298055790d7d635a9603e28f538ed1c83a05f0&o=&hp=1",
                         Contry = "Qatar",
                         Stars = 5,
+                        Lat = 25.379,
+                        Lng = 51.531,
                         Price = 3500
                     },
 
@@ -132,6 +146,8 @@ namespace Hotels.Models
                         Img6 = "https://cf.bstatic.com/xdata/images/hotel/max1024x768/611270575.jpg?k=a5ef0d9df06aadf2286bfe97bff12b4e7d7506c9ba16de599fa4685331462f70&o=&hp=1",
                         Contry = "Singapore",
                         Stars = 5,
+                        Lat = 1.283,
+                        Lng = 103.859,
                         Price = 4800
                     },
 
@@ -148,6 +164,8 @@ namespace Hotels.Models
                         Img6 = "https://cf.bstatic.com/xdata/images/hotel/max1024x768/502057158.jpg?k=fd8cc92416ed7c1871b9ac90e3fcf78fb77ff5ec4eeb0e24a4921d0919cbd28f&o=&hp=1",
                         Contry = "Monaco",
                         Stars = 5,
+                        Lat = 43.739,
+                        Lng = 7.427,
                         Price = 7000
                     },
                     new Hotel
@@ -163,6 +181,8 @@ namespace Hotels.Models
                         Img6 = "https://cf.bstatic.com/xdata/images/hotel/max1024x768/463992273.jpg?k=ade8e51939bce369917a82313d32c47f99a35b387fb59622d02e2ccfaf739762&o=&hp=1",
                         Contry = "Egypt",
                         Stars = 4,
+                        Lat = 27.174,
+                        Lng = 33.824,
                         Price = 2222
                     }
                 );

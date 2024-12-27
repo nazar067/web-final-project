@@ -19,6 +19,8 @@ namespace Hotels.Models
         public string Img6 { get; set; }
         public string Contry { get; set; }
         public int Stars { get; set; }
+        public double Lat { get; set; }
+        public double Lng { get; set; }
         public int Price { get; set; }
     }
 }
