@@ -120,8 +120,8 @@
         </div>
     </div>
         <div style="margin-top: 20px;">
-            <h3>Location</h3>
-            <p>Coordinates: Latitude = @hotel.Lat, Longitude = @hotel.Lng</p>
+            <h3>Map</h3>
+            <p>City = @hotel.City</p>
 
             <iframe width="400"
                     height="400"
@@ -135,7 +135,7 @@
             <small>
                 <a href="@($"https://www.openstreetmap.org/?mlat={hotel.Lat.ToString(System.Globalization.CultureInfo.InvariantCulture)}&mlon={hotel.Lng.ToString(System.Globalization.CultureInfo.InvariantCulture)}#map=12/{hotel.Lat.ToString(System.Globalization.CultureInfo.InvariantCulture)}/{hotel.Lng.ToString(System.Globalization.CultureInfo.InvariantCulture)}")"
                    target="_blank">
-                    View on OpenStreetMap
+                    OpenStreetMap
                 </a>
             </small>
         </div>
