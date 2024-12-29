@@ -1,4 +1,14 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿function toggleGalleryCarousel(galleryId, carouselId, button) {
+    const gallery = document.getElementById(galleryId);
+    const carousel = document.getElementById(carouselId);
 
-// Write your JavaScript code.
+    if (gallery.style.display === "none") {
+        gallery.style.display = "block";
+        carousel.style.display = "none";
+        button.textContent = "Switch to Carousel";
+    } else {
+        gallery.style.display = "none";
+        carousel.style.display = "block";
+        button.textContent = "Switch to Gallery";
+    }
+}
