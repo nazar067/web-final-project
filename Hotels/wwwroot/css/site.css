@@ -191,6 +191,14 @@ h1, h2, h3 {
     color: #333;
 }
 
+.form-reg {
+    background-image: url(https://wallpaper.dog/large/5486507.png);
+    height: 540px;
+    width: 1400px;
+    background-size: cover;
+    border-radius: 10px;
+}
+
 @media (max-width: 768px) {
     .hotels {
         width: 90%;

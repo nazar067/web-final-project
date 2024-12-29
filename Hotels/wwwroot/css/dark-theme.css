@@ -1,24 +1,23 @@
-﻿/* Основной фон и текст */
-html, body {
-    background-color: #121212; /* Темный фон */
-    color: #ffffff; /* Белый текст */
+﻿html, body {
+    background-color: #121212; 
+    color: #ffffff; 
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
 }
 
-/* Ссылки */
+
 a {
-    color: #bb86fc; /* Лиловый цвет ссылок */
+    color: #bb86fc; 
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
     a:hover {
-        color: #9a64e0; /* Более насыщенный лиловый при наведении */
+        color: #9a64e0; 
     }
 
-/* Кнопка */
+
 .btn-primary {
     background-color: #333333;
     color: #ffffff;
@@ -33,16 +32,16 @@ a {
         background-color: #444444;
     }
 
-/* Карточка отеля */
+
 .hotels {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #1e1e1e; /* Темно-серый фон карточки */
-    color: #ffffff; /* Белый текст */
-    border: 1px solid #444444; /* Темно-серая рамка */
+    background-color: #1e1e1e; 
+    color: #ffffff; 
+    border: 1px solid #444444; 
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Тень */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); 
     padding: 20px;
     width: 600px;
     margin: 20px auto;
@@ -54,41 +53,40 @@ a {
         box-shadow: 0 6px 10px rgba(0, 0, 0, 0.6);
     }
 
-    /* Изображения */
+
     .hotels img {
         width: 100%;
         border-radius: 10px;
         margin-bottom: 15px;
     }
 
-/* Описание отеля */
 .descrip {
     width: 100%;
     margin-top: 15px;
     border-radius: 10px;
-    background-color: #2c2c2c; /* Темный фон описания */
+    background-color: #2c2c2c; 
     padding: 10px;
     text-align: justify;
-    color: #cfcfcf; /* Светло-серый текст */
+    color: #cfcfcf; 
 }
 
-/* Дополнительная информация */
+
 .hotel-info {
     margin-top: 10px;
     text-align: center;
     color: #bbbbbb;
 }
 
-/* Цена */
+
 .hotels .price {
-    color: #27ae60; /* Зеленый цвет для цены */
+    color: #27ae60; 
     font-weight: bold;
 }
 
-/* Кнопка покупки */
+
 .buy-button {
     margin-top: 15px;
-    background-color: #444444; /* Темно-серый фон кнопки */
+    background-color: #444444; 
     border: none;
     border-radius: 5px;
     color: #ffffff;
@@ -98,15 +96,14 @@ a {
 }
 
     .buy-button:hover {
-        background-color: #555555; /* Более светлый серый при наведении */
+        background-color: #555555; 
     }
 
-/* Заголовки */
+
 h1, h2, h3, h4, h5, h6 {
-    color: #bb86fc; /* Лиловый цвет заголовков */
+    color: #bb86fc; 
 }
 
-/* Подвал */
 .footer {
     position: fixed;
     bottom: 0;
@@ -117,7 +114,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 10px 0;
 }
 
-/* Регистрационная форма */
+
 .form-reg {
     background-image: url(https://wallpapers.com/images/hd/cool-grey-o48b24zak36yzbs4.jpg);
     height: 540px;
@@ -129,7 +126,7 @@ h1, h2, h3, h4, h5, h6 {
 tr, th {
     color: #29688f;
 }
-/* Адаптивность */
+
 @media (max-width: 768px) {
     .hotels {
         width: 90%;

@@ -32,6 +32,20 @@
     </div>
     <div style="display:flex; margin-left:200px">
         <div>
+            <div style="display:block; text-align:center">City</div>
+            <div style="margin:20px">@Html.TextAreaFor(x => x.City)</div>
+        </div>
+        <div>
+            <div style="display:block; margin-left:115px">Latitude:x</div>
+            <div style="margin:20px">@Html.TextAreaFor(x => x.Lat)</div>
+        </div>
+        <div>
+            <div style="display:block; margin-left:90px">Longitude:y</div>
+            <div style="margin:20px">@Html.TextAreaFor(x => x.Lng)</div>
+        </div>
+    </div>
+    <div style="display:flex; margin-left:200px">
+        <div>
             <div style="display:block; text-align:center">Photo 1</div>
             <div style="margin:20px">@Html.TextAreaFor(x => x.Img1)</div>
         </div>
