@@ -35,6 +35,8 @@ namespace Hotels
             services.AddIdentity<User, IdentityRole>()
                                     .AddEntityFrameworkStores<IdentityContext>();
             services.AddTransient<MailSender>();
+            services.AddControllers();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,6 +64,7 @@ namespace Hotels
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllers();
             });
         }
     }

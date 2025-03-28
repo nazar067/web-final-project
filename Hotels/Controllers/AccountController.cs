@@ -44,7 +44,6 @@ namespace Hotels.Controllers
 
                 if (result.Succeeded)
                 {
-                    // Добавляем пользователя в роль "User"
                     var roleResult = await userManager.AddToRoleAsync(user, "Admin");
 
                     if (!roleResult.Succeeded)
