@@ -1,27 +1,23 @@
 ﻿using System.Collections.Generic;
 using System.ServiceModel;
-using System.Xml.Serialization;
+using System.Threading.Tasks;
 using Hotels.Models;
 
-namespace Hotels.Services
+[ServiceContract]
+public interface IHotelService
 {
-    [ServiceContract]
-    [XmlSerializerFormat]
-    public interface IHotelService
-    {
-        [OperationContract]
-        List<Hotel> GetHotels();
+    [OperationContract]
+    Task<List<Hotel>> GetHotelsAsync();  // Отримати всі готелі
 
-        [OperationContract]
-        Hotel GetHotelById(int id);
+    [OperationContract]
+    Task<Hotel> GetHotelByIdAsync(int id); // Отримати готель за ID
 
-        [OperationContract]
-        void AddHotel(Hotel hotel);
+    [OperationContract]
+    Task<bool> CreateHotelAsync(Hotel hotel); // Створити готель
 
-        [OperationContract]
-        void UpdateHotel(Hotel hotel);
+    [OperationContract]
+    Task<bool> UpdateHotelAsync(Hotel hotel); // Оновити готель
 
-        [OperationContract]
-        void DeleteHotel(int id);
-    }
+    [OperationContract]
+    Task<bool> DeleteHotelAsync(int id); // Видалити готель
 }

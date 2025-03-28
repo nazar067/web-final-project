@@ -1,50 +1,46 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using CoreWCF;
+using System.Threading.Tasks;
 using Hotels.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace Hotels.Services
+public class HotelService : IHotelService
 {
-    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)] // Указываем CoreWCF
-    public class HotelService : IHotelService
+    private readonly HotelsContext _context;
+
+    public HotelService(HotelsContext context)
     {
-        private readonly HotelsContext _context;
+        _context = context;
+    }
 
-        public HotelService(HotelsContext context)
-        {
-            _context = context;
-        }
+    public async Task<List<Hotel>> GetHotelsAsync()
+    {
+        return await _context.Hotels.ToListAsync();
+    }
 
-        public List<Hotel> GetHotels()
-        {
-            return _context.Hotels.ToList();
-        }
+    public async Task<Hotel> GetHotelByIdAsync(int id)
+    {
+        return await _context.Hotels.FindAsync(id);
+    }
 
-        public Hotel GetHotelById(int id)
-        {
-            return _context.Hotels.Find(id);
-        }
+    public async Task<bool> CreateHotelAsync(Hotel hotel)
+    {
+        _context.Hotels.Add(hotel);
+        return await _context.SaveChangesAsync() > 0;
+    }
 
-        public void AddHotel(Hotel hotel)
-        {
-            _context.Hotels.Add(hotel);
-            _context.SaveChanges();
-        }
+    public async Task<bool> UpdateHotelAsync(Hotel hotel)
+    {
+        _context.Hotels.Update(hotel);
+        return await _context.SaveChangesAsync() > 0;
+    }
 
-        public void UpdateHotel(Hotel hotel)
-        {
-            _context.Hotels.Update(hotel);
-            _context.SaveChanges();
-        }
+    public async Task<bool> DeleteHotelAsync(int id)
+    {
+        var hotel = await _context.Hotels.FindAsync(id);
+        if (hotel == null) return false;
 
-        public void DeleteHotel(int id)
-        {
-            var hotel = _context.Hotels.Find(id);
-            if (hotel != null)
-            {
-                _context.Hotels.Remove(hotel);
-                _context.SaveChanges();
-            }
-        }
+        _context.Hotels.Remove(hotel);
+        return await _context.SaveChangesAsync() > 0;
     }
 }

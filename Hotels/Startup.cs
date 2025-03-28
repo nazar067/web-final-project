@@ -8,45 +8,53 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using SoapCore;
-using CoreWCF;
-using CoreWCF.Configuration;
-using CoreWCF.Description;
 
 namespace Hotels
 {
     public class Startup
     {
         public IConfiguration Configuration { get; set; }
-
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
+
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<HotelsContext>(options =>
+                                    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddMvc();
+            services.AddSession();
+            services.AddDbContext<IdentityContext>(options =>
+                                    options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
+            services.AddIdentity<User, IdentityRole>()
+                                    .AddEntityFrameworkStores<IdentityContext>();
+            services.AddTransient<MailSender>();
 
-            services.AddServiceModelServices()
-                    .AddServiceModelMetadata();  // Добавляет CoreWCF
             services.AddSoapCore();
-            services.AddSingleton<IHotelService, HotelService>();
+            services.AddScoped<IHotelService, HotelService>(); // Додаємо HotelService
 
             services.AddDbContext<HotelsContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDbContext<IdentityContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
-            services.AddIdentity<User, IdentityRole>()
-                .AddEntityFrameworkStores<IdentityContext>()
-                .AddDefaultTokenProviders();
             services.AddControllers();
-            services.AddMvc();
-            services.AddSession();
         }
 
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseRouting();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
 
+            app.UseSoapEndpoint<IHotelService>("/HotelService.asmx", new SoapEncoderOptions(), SoapSerializer.DataContractSerializer);
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -56,39 +64,20 @@ namespace Hotels
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
+            app.UseDefaultFiles();
 
-            app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();
+
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseServiceModel(serviceBuilder =>
-            {
-                serviceBuilder.AddService<HotelService>();
-                serviceBuilder.AddServiceEndpoint<HotelService, IHotelService>(
-                    new BasicHttpBinding(), "/HotelService.svc");
-
-
-                var metadata = new ServiceMetadataBehavior { HttpGetEnabled = true };
-                serviceBuilder.ConfigureServiceHostBase<HotelService>(host => host.Description.Behaviors.Add(metadata));
-            });
-
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
-        
-
-
-            
-
-        // Настройка SOAP-сервиса
-        app.UseSoapEndpoint<IHotelService>("/HotelService.svc",
-                new SoapEncoderOptions(),
-                SoapSerializer.DataContractSerializer);
         }
-
-
     }
 }
