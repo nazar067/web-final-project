@@ -53,7 +53,6 @@ namespace Hotels.Controllers
 
             ViewBag.HotelsId = id;
 
-            // Передача сообщения из TempData в ViewBag, если оно есть
             if (TempData["SuccessMessage"] != null)
             {
                 ViewBag.SuccessMessage = TempData["SuccessMessage"];
@@ -84,21 +83,16 @@ namespace Hotels.Controllers
 
             if (ModelState.IsValid)
             {
-                // Устанавливаем Id в 0, чтобы избежать конфликтов с существующими записями
                 orders.Id = 0;
 
-                // Сохраняем заказ в базе данных
                 context.Orders.Add(orders);
                 context.SaveChanges();
 
-                // Добавляем сообщение об успехе
                 TempData["SuccessMessage"] = "Thank you for your order! Your request has been successfully submitted.";
 
-                // Перенаправляем пользователя на страницу "Buy"
                 return RedirectToAction("Buy");
             }
 
-            // Если есть ошибки валидации, возвращаем текущую форму с ошибками
             return View(orders);
         }
     }
